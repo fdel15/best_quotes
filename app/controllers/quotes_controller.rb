@@ -5,7 +5,7 @@ class QuotesController < Rulers2::Controller
   end
 
   def quote_1
-    quote_1 = Rulers2::Model::FileModel.find(1)
+    quote_1 = FileModel.find(1)
     render :quote_1, :obj => quote_1
   end
 end
