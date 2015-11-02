@@ -1,6 +1,6 @@
 require "rulers2"
 
 module BestQuotes
-  class Application < Rulers::Application
+  class Application < Rulers2::Application
   end
 end
