@@ -14,6 +14,11 @@ class QuotesController < Rulers2::Controller
     render :index
   end
 
+  def quotes_by_submitter
+    @quotes = FileModel.find_all_by_submitter("Frank")
+    render :index
+  end
+
   def new_quote
     attrs = {
       "submitter" => "web user",
@@ -23,4 +28,14 @@ class QuotesController < Rulers2::Controller
     m = FileModel.create attrs
     render :quote, :obj => m
   end
+
+  def update
+    q = FileModel.find(1)
+    if @env["REQUEST_METHOD"] == "POST"
+      q["quote"] = "Hello world!"
+      q.save
+    end
+    render :quote, :obj => q
+  end
+
 end
