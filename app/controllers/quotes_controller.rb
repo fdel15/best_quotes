@@ -19,6 +19,11 @@ class QuotesController < Rulers2::Controller
     render :index
   end
 
+  def show
+    quote = FileModel.find(params["id"])
+    render :quote, :obj => quote
+  end
+
   def new_quote
     attrs = {
       "submitter" => "web user",
