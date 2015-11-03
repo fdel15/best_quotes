@@ -32,7 +32,7 @@ class QuotesController < Rulers2::Controller
   def update
     q = FileModel.find(1)
     if @env["REQUEST_METHOD"] == "POST"
-      q["quote"] = "Hello world!"
+      q["quote"] = "ATTR NOTTTTT"
       q.save
     end
     render :quote, :obj => q
