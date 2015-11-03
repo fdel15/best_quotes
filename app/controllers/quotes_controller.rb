@@ -11,7 +11,6 @@ class QuotesController < Rulers2::Controller
 
   def index
     @quotes = FileModel.all
-    render :index
   end
 
   def quotes_by_submitter
@@ -20,9 +19,8 @@ class QuotesController < Rulers2::Controller
   end
 
   def show
-    quote = FileModel.find(params["id"])
+    @quote = FileModel.find(params["id"])
     @ua = request.user_agent
-    render :quote, :obj => quote
   end
 
   def new_quote
