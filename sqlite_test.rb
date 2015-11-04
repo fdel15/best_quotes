@@ -10,6 +10,7 @@ mt = MyTable.create "title" => "I saw it again!"
 mt["title"] = "This is an update!"
 mt.save!
 
+
 # mt2 = MyTable.find mt["id"]
 
 # puts "Title: #{mt2["title"]}"
