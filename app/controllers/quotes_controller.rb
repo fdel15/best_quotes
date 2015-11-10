@@ -1,3 +1,5 @@
+require 'pry'
+
 class QuotesController < Rulers2::Controller
   def a_quote
     @noun = "winking"
@@ -11,6 +13,7 @@ class QuotesController < Rulers2::Controller
 
   def index
     @quotes = FileModel.all
+    render :index
   end
 
   def quotes_by_submitter
@@ -21,6 +24,7 @@ class QuotesController < Rulers2::Controller
   def show
     @quote = FileModel.find(params["id"])
     @ua = request.user_agent
+    render :show
   end
 
   def new_quote

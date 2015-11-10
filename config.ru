@@ -8,6 +8,7 @@ app.route do
   match "", "quotes#index"
   match "sub-app",
     proc { [200, {}, ["Hello, sub-app"]] }
+  match "frank", "quotes#a_quote"
 
 # default routes
 match ":controller/:id/:action"
